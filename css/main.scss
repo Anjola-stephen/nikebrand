@@ -1,0 +1,332 @@
+body {
+    margin: 1.5em;
+    font-family: poppins, sans-serif;
+    font-weight: 400;
+    
+}
+
+a {
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.hero_image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url('../assets/ryan-plomp-jvoZ-Aux9aw-unsplash.jpg');
+    background-size: cover;
+    background-position-x: 20%;
+    background-position-y: 20%;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    background-repeat: no-repeat;
+    animation: introload 3s forwards;
+
+    //overflow: hidden;
+}
+
+.logo {
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    
+    span{
+        color: rgb(0, 162, 216);
+    }
+}
+
+nav {
+    position: fixed;
+    right: 0;
+    top: 0;
+    background: white;
+    height: 90vh;
+    width: 50%;
+    z-index: 2;
+    text-transform: uppercase;
+    transform: translateX(100%);
+    transition: transform .5s ease-in-out;
+   
+    ul{
+        list-style-type: none;
+        padding: 0;
+        margin-top: 8em;
+
+        a{
+            color: rgb(151, 2, 151);
+            padding: .9em 2em;
+            display: block;
+            width: 100%;
+    
+            &:hover{
+                background: rgb(238, 238, 238);
+            }
+         }
+
+    }
+    .close {
+        stroke: black;
+        float: right;
+        margin: 2em;
+        width: 2.5em;
+        path{
+            fill: black;
+        }
+    }
+    
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+
+
+    svg {
+        width: 1.5em;
+        margin-top: .65em;
+        cursor: pointer;
+
+        path {
+            fill: white;
+        }
+    }
+}
+
+section.hero_section {
+    color: white;
+    height: 90vh;
+    animation: movedown 1s ease-in-out forwards;
+    opacity: 0;
+
+    h1 {
+        font-size: 3.0em;
+        text-align: left;
+        color: rgb(0, 117, 156);
+        font-weight: bold; 
+        margin-top: 0rem;
+        text-transform: capitalize;
+    }
+
+    .subhead {
+        font-size: 1.3em;
+        text-align: center;
+        margin-top: 1rem;
+        color: rgb(0, 117, 156);
+    }
+    svg {
+        width: 3em;
+        position: absolute;
+        margin-top: -1.5rem;
+        stroke: white;
+        animation: movesvg 1s alternate-reverse infinite;
+        path{
+            fill: white;
+        }
+    }
+}
+
+section.moreinfo{
+        img{
+            width: 100%;
+            object-fit: cover;
+            height: 12em;
+        }
+        .title{
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+        .desc{
+            line-height: 1.2rem;
+        }
+}
+
+.open-nav{
+    transform: translateX(0);
+    
+}
+@media only screen and (min-width: 680px){
+    body {
+        margin: 1.5em 5em;
+        font-family: poppins;
+        font-weight: 400;
+        
+    }
+}
+@media only screen and (min-width: 920px){
+        .menu{
+            display: none;
+        }
+        nav{
+            transform: translateX(0);
+            background: none;
+            display: block;
+            width: auto;
+            height: auto;
+
+            ul{
+                display: flex;
+                margin: 0;
+                margin-right: 5em;
+
+                a{
+                    color: rgb(0, 117, 156);
+                    padding: 1.5em 1.5em;
+                    font-size: 1rem;
+                    text-transform: capitalize;
+                    font-weight: 500;
+
+                &:hover{
+                    background: none;
+                    text-decoration: underline;
+                }
+                }
+            }
+
+        }
+
+        svg.close{
+            display: none;
+        }
+        section.hero_section{
+            h1{
+                margin-top: 2.0em;
+            }
+        }
+        .hero_image{
+            left: unset;
+            right: 0;
+            width: 50%;
+            height: 42em;
+        }
+
+        .logo{
+            color: #F9DFE3;
+            font-size: 2.0rem;
+            span{
+                color: #008197;
+            }
+
+        }
+
+            section.hero_section {
+                    width: 40%;
+                    height: auto;
+                    margin-bottom: 10em;
+                    
+                h1{
+                    color: rgb(0, 129, 151)
+                }
+                .subhead{
+                    text-align: unset;
+                    padding-left: .2em;
+                }
+
+                svg{
+                    position: unset;
+                    stroke: rgb(0, 129, 151);
+                    width: 4.5em;
+                    margin: 5em;
+                    margin-left: 0;
+
+                    path{
+                        fill: rgb(0, 129, 151);
+                    }
+                }
+            }
+
+            .feature{
+                display: grid;
+                grid-template-columns: repeat(2, auto);
+                gap: 2.5em;
+                margin-bottom: 8em;  
+
+                .content{
+                    width: 25em;
+                    text-align: right;
+                }
+            }
+
+            section.moreinfo{
+                img{
+                    width: 25em;
+                }
+            }
+
+            .feature.reverse{
+                grid-template-areas: 
+                "left right";
+
+                img{
+                    grid-area: left;
+                    width: 25em;
+                }
+
+                .content{
+                    text-align: left;
+                    width: 25em;
+                    justify-self: left;
+                }
+            }
+            
+}
+
+@media only screen and (min-width: 1200px) {
+
+    .wrapper{
+        width: 1200px;
+        margin: 0 3.5em;
+    }
+
+    .hero_image{
+        height: 40em;
+        margin-top: -3em;
+        padding-right: 3em;
+        padding-bottom: 5em;
+    }
+
+    section.hero_section{
+        margin-bottom: 5em;
+    }
+
+    .feature{
+        gap: 0;
+    }
+    .container{
+        width: 920px;
+        margin-left: 5.0em;
+    }
+}
+
+
+@keyframes introload{
+    from{
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    to{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+
+    }
+}
+
+@keyframes movesvg{
+    from{
+        transform: translateY(30px);
+    }
+    to{
+        transform: translateY(0);
+
+    }
+}
+
+@keyframes movedown{
+    from{
+        transform: translateX(-100px);
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+
+    }
+}
